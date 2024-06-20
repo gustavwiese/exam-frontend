@@ -17,7 +17,7 @@ export default function AddParticipant() {
   };
 
   return (
-    <div className="mt-10">
+    <div className="my-10 mx-5">
       <h1 className="text-3xl font-bold mb-6">Tilføj Deltager</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
