@@ -4,8 +4,13 @@ import { getResults } from "../services/resultService";
 
 interface Result {
   id: number;
-  participantName: string;
-  disciplineName: string;
+  participant: {
+    name: string;
+  };
+  discipline: {
+    name: string;
+  };
+  resultType: string;
   resultValue: string;
 }
 
@@ -25,6 +30,19 @@ export default function ResultList() {
     }
   };
 
+  const formatResultValue = (result: Result) => {
+    const { resultType, resultValue } = result;
+    if (resultType === "time") {
+      return `${resultValue} s`;
+    } else if (resultType === "distance") {
+      return `${resultValue} m`;
+    } else if (resultType === "points") {
+      return `${resultValue} points`;
+    } else {
+      return resultValue;
+    }
+  };
+
   return (
     <div className="container mx-auto mt-10">
       <h1 className="text-3xl font-bold mb-6 text-center">Resultater</h1>
@@ -40,9 +58,9 @@ export default function ResultList() {
         <tbody>
           {results.map((result) => (
             <tr key={result.id} className="text-center">
-              <td className="py-2">{result.participantName}</td>
-              <td className="py-2">{result.disciplineName}</td>
-              <td className="py-2">{result.resultValue}</td>
+              <td className="py-2">{result.participant.name}</td>
+              <td className="py-2">{result.discipline.name}</td>
+              <td className="py-2">{formatResultValue(result)}</td>
             </tr>
           ))}
         </tbody>
