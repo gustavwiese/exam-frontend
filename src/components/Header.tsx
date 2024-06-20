@@ -3,7 +3,7 @@ export default function Header() {
     <div>
       {" "}
       <header className="bg-gray-800 p-4 text-white text-center">
-        <h1 className="text-2xl">Pet Management</h1>
+        <h1 className="text-2xl">Atletiksstævne</h1>
       </header>
     </div>
   );

@@ -1,6 +1,5 @@
-// src/App.tsx
-import PetList from "./components/PetList";
-import AddPet from "./components/AddPet";
+import ParticipantList from "./components/ParticipantList";
+import AddParticipant from "./components/AddParticipant";
 import Header from "./components/Header";
 
 export default function App() {
@@ -8,8 +7,8 @@ export default function App() {
     <div className="container">
       <Header />
       <div className="mx-auto max-w-[1240px]">
-        <AddPet />
-        <PetList />
+        <AddParticipant />
+        <ParticipantList />
       </div>
     </div>
   );
